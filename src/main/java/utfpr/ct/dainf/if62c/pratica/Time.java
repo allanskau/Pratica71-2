@@ -25,7 +25,7 @@ public class Time {
         this.jogadores = jogadores;
     }
     
-    public HashMap getJogadores(){
+    public HashMap<String, Jogador> getJogadores(){
         return jogadores;
     }
     

@@ -25,6 +25,7 @@ public class Pratica62 {
         time1.addJogador("atacante", new Jogador(15, "mario"));
         time1.addJogador("goleiro", new Jogador(1, "fulano"));
         time1.addJogador("lateral direito", new Jogador(14, "mario"));
+        Time time2 = new Time(time1.getJogadores());
         /*
         Time time2 = new Time(new HashMap<>());
         time2.addJogador("goleiro", new Jogador(1, "fulano"));
@@ -32,7 +33,7 @@ public class Pratica62 {
         time2.addJogador("atacante", new Jogador(15, "beltrano"));
         */
         JogadorComparator comparador = new JogadorComparator(false, true, false){};
-        List<Jogador> ordenados = time1.ordena(comparador);
+        List<Jogador> ordenados = time2.ordena(comparador);
         String format = "%3d %-20s";
         System.out.println("Num Nome");
         for (Jogador j: ordenados) {
