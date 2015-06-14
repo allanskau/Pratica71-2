@@ -38,8 +38,8 @@ public class Pratica62 {
         for (Jogador j: ordenados) {
             System.out.println(String.format(format, j.getNumero(), j.getNome()));
         }
-        Jogador adriano = new Jogador(1, "adriano");
-        int pos = Collections.binarySearch(ordenados, adriano, comparador);
+        Jogador adriano = new Jogador(11, "adriano");
+        int pos = Collections.binarySearch(ordenados, adriano, new JogadorComparator(true, false, false));
         if (pos >= 0) {
             System.out.println("Jogador encontrado:");
             System.out.println(String.format(format, ordenados.get(pos).getNumero(), ordenados.get(pos).getNome()));

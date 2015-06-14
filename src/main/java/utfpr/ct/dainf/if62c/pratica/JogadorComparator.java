@@ -11,7 +11,7 @@ import java.util.Comparator;
  *
  * @author allan
  */
-public abstract class JogadorComparator implements Comparator<Jogador> {
+public class JogadorComparator implements Comparator<Jogador> {
 
     private boolean ordena_numero;
     private boolean numero_ascendente;
@@ -26,6 +26,30 @@ public abstract class JogadorComparator implements Comparator<Jogador> {
     public JogadorComparator(boolean ordena_numero, boolean numero_ascendente, boolean nome_ascendente) {
         this.ordena_numero = ordena_numero;
         this.numero_ascendente = numero_ascendente;
+        this.nome_ascendente = nome_ascendente;
+    }
+
+    public boolean isOrdena_numero() {
+        return ordena_numero;
+    }
+
+    public void setOrdena_numero(boolean ordena_numero) {
+        this.ordena_numero = ordena_numero;
+    }
+
+    public boolean isNumero_ascendente() {
+        return numero_ascendente;
+    }
+
+    public void setNumero_ascendente(boolean numero_ascendente) {
+        this.numero_ascendente = numero_ascendente;
+    }
+
+    public boolean isNome_ascendente() {
+        return nome_ascendente;
+    }
+
+    public void setNome_ascendente(boolean nome_ascendente) {
         this.nome_ascendente = nome_ascendente;
     }
     
