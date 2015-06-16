@@ -19,17 +19,17 @@ import utfpr.ct.dainf.if62c.pratica.Time;
  */
 public class Pratica71 {
     public static void main(String[] args) {
-        Time time1 = new Time(new HashMap<>());
+        Time time1 = new Time();
         int n_jogadores;
         System.out.println("Digite o numero de jogadores:");
         Scanner scanner = new Scanner(System.in);
         n_jogadores = scanner.nextInt();
-        String posicao;
+        //String posicao;
         int numero;
         String nome;
         for(int i = 0; i < n_jogadores; i ++){
-            System.out.println("Digite a posicao do novo jogador:");
-            posicao = scanner.next();
+            //System.out.println("Digite a posicao do novo jogador:");
+            //posicao = scanner.next();
             System.out.println("Digite o numero do novo jogador:");
             numero = scanner.nextInt();
             if(numero < 1 || numero > 24){
@@ -44,7 +44,8 @@ public class Pratica71 {
             }
             System.out.println("Digite o nome do novo jogador:");
             nome = scanner.next();
-            time1.addJogador(posicao, new Jogador(numero, nome));
+            time1.addJogador(numero, nome);
+            //time1.addJogador(posicao, new Jogador(numero, nome));
         }
         /*
         time1.addJogador("zagueiro", new Jogador(4, "lucas"));
@@ -72,8 +73,8 @@ public class Pratica71 {
         }
         int flag = 0;
         while(flag == 0){
-            System.out.println("Digite a posicao do novo jogador:");
-            posicao = scanner.next();
+            //System.out.println("Digite a posicao do novo jogador:");
+            //posicao = scanner.next();
             System.out.println("Digite o numero do novo jogador:");
             numero = scanner.nextInt();
             if(numero < 0 || numero > 24){
