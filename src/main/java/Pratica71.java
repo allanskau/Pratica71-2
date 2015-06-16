@@ -18,18 +18,23 @@ public class Pratica71 {
     public static void main(String[] args) {
         Time time1 = new Time();
         int n_jogadores;
-        System.out.println("Digite o numero de jogadores:");
-        Scanner scanner = new Scanner(System.in);
-        n_jogadores = scanner.nextInt();
-        //String posicao;
         int numero;
         String nome;
+        
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o numero de jogadores:");
+        while(true){
+            if (scanner.hasNextInt()) {
+                n_jogadores = scanner.nextInt();
+                break;
+            }else{
+                System.out.println("Valor invalido. Digite o numero de jogadores:");
+                scanner.next();
+            }
+        }
         for (int i = 0; i < n_jogadores; i++) {
-            //System.out.println("Digite a posicao do novo jogador:");
-            //posicao = scanner.next();
             System.out.println("Digite o numero do novo jogador:");
-
-            //if(numero < 1 || numero > 24){
             if (scanner.hasNextInt()) {
                 numero = scanner.nextInt();
             } else {
@@ -45,24 +50,7 @@ public class Pratica71 {
             System.out.println("Digite o nome do novo jogador:");
             nome = scanner.next();
             time1.addJogador(numero, nome);
-            //time1.addJogador(posicao, new Jogador(numero, nome));
         }
-        /*
-         time1.addJogador("zagueiro", new Jogador(4, "lucas"));
-         time1.addJogador("goleiro base", new Jogador(1, "juca"));
-         time1.addJogador("goleiro reserva", new Jogador(11, "joao"));
-         time1.addJogador("lateral esquerdo", new Jogador(4, "jose"));
-         time1.addJogador("goleiro substituto", new Jogador(1, "adriano"));
-         time1.addJogador("atacante", new Jogador(15, "mario"));
-         time1.addJogador("goleiro", new Jogador(1, "fulano"));
-         time1.addJogador("lateral direito", new Jogador(14, "mario"));
-         Time time2 = new Time(time1.getJogadores());
-         /*
-         Time time2 = new Time(new HashMap<>());
-         time2.addJogador("goleiro", new Jogador(1, "fulano"));
-         time2.addJogador("lateral", new Jogador(4, "ciclano"));
-         time2.addJogador("atacante", new Jogador(15, "beltrano"));
-         */
         JogadorComparator comparador = new JogadorComparator(true, true, false) {
         };
         List<Jogador> ordenados = time1.ordena(comparador);
@@ -73,8 +61,6 @@ public class Pratica71 {
             System.out.println(String.format(format, j.getNumero(), j.getNome()));
         }
         while (true) {
-            //System.out.println("Digite a posicao do novo jogador:");
-            //posicao = scanner.next();
             System.out.println("Digite o numero do novo jogador:");
             if (scanner.hasNextInt()) {
                 numero = scanner.nextInt();
@@ -93,7 +79,6 @@ public class Pratica71 {
             }
             System.out.println("Digite o nome do novo jogador:");
             nome = scanner.next();
-            //time1.addJogador(posicao, new Jogador(numero, nome));
             if (ordenados.get(ordenados.size() - 1).getNumero() < numero) {
                 ordenados.add(new Jogador(numero, nome));
             } else {
@@ -115,16 +100,5 @@ public class Pratica71 {
                 System.out.println(String.format(format, j.getNumero(), j.getNome()));
             }
         }
-        /*
-         Jogador adriano = new Jogador(1, "adriano");
-         int pos = Collections.binarySearch(ordenados, adriano, new JogadorComparator(true, false, false));
-         if (pos >= 0) {
-         System.out.println("Jogador encontrado:");
-         System.out.println(String.format(format, ordenados.get(pos).getNumero(), ordenados.get(pos).getNome()));
-         } else {
-         System.out.println("Jogador não encontrado. Posição: " + (-pos-1));
-         }
-         */
-
     }
 }
